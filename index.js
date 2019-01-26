@@ -23,6 +23,7 @@ Nugget.prototype.initFirebase = function() {
   this.storage = firebase.storage();
 
   this.listEvents;
+  //test change
 }
 
 Nugget.prototype.listEvents = function() {
