@@ -58,30 +58,86 @@
     </script>
     </head>
     <body>
-  <form>
-      <form action="/formdata.csv">
-      <fieldset>
-        <legend>New Event Submission:</legend>
-        Event Name:<br>
-        <input type="text" name="eventname"<br><br>
-        Date/Time of Event:<br>
-        <input type="text" name="dateofevent"<br><br>
-        Location of Event:<br>
-        <input type="text" name="locationofevent"<br>
-      <p>Type of Event:</p>
-      <form action="/formdata.csv">
-        <select name="eventtype">
-          <option value="health">Health</option>
-          <option value="education">Education</option>
-          <option value="food">Food</option>
-          <option value="culture">Culture</option>
-          <option value="professional">Professional</option>
-          <option value="entertainment">Entertainment</option>
-          <option value="adventureoutdoors">Adventure/Outdoors</option>
-        </select>
-        <br><br>
-      <input type="button" value="Submit" onclick="WriteToFile(this.form)">
-  </form>
+      <head>
+      <script language="javascript">
+        function WriteToFile(passForm) {
+          var fso = new ActiveXObject("Scripting.FileSystemObject");
+          var fileLoc = "D:\\formdata.csv";
+          var file = fso.CreateTextFile(fileLoc, true);
+          file.writeline(passForm.eventname.value + ',' +
+                         passForm.dateofevent.value + ',' + 		passForm.locationofevent.value + ',' + passForm.eventtype.value);
+          file.Close();
+          alert('File created successfully at location: ' + fileLoc);
+         }
+      </script>
+      </head>
+      <body>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    * {box-sizing: border-box;}
+
+    input[type=text], select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    input[type=submit] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background: linear-gradient(to bottom, #ffcc99 0%, #ccccff 100%);
+    }
+
+    .container {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    </style>
+    </head>
+    <body>
+
+    <h3>Add an Event!</h3>
+
+    <div class="container">
+    <form action="/formdata.csv">
+        <fieldset>
+          <legend>New Event Submission:</legend>
+          Event Name:<br>
+          <input type="text" name="eventname"<br><br>
+          Date/Time of Event:<br>
+          <input type="text" name="dateofevent"<br><br>
+          Location of Event:<br>
+          <input type="text" name="locationofevent"<br>
+        <p>Type of Event:</p>
+        <form action="/formdata.csv">
+          <select name="eventtype">
+            <option value="health">Health</option>
+            <option value="education">Education</option>
+            <option value="food">Food</option>
+            <option value="culture">Culture</option>
+            <option value="professional">Professional</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="adventureoutdoors">Adventure/Outdoors</option>
+          </select>
+          <br><br>
+        <input type="button" value="Submit" onclick="WriteToFile(this.form)">
+      </form>
+    </div>
 
     <!-- Firebase Script -->
     <script src="index.js" type="text/javascript"></script>
