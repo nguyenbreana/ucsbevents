@@ -42,31 +42,45 @@
       </nav>
     </header>
 
+    <head>
+    <script language="javascript">
+      function WriteToFile(passForm) {
+        var fso = new ActiveXObject("Scripting.FileSystemObject");
+        var fileLoc = "D:\\formdata.csv";
+        var file = fso.CreateTextFile(fileLoc, true);
+        file.writeline(passForm.eventname.value + ',' +
+                       passForm.dateofevent.value + ',' +
+                       passForm.locationofevent.value + ',' +
+                       passForm.eventtype.value);
+        file.Close();
+        alert('File created successfully at location: ' + fileLoc);
+       }
+    </script>
+    </head>
+    <body>
   <form>
-    <form action="/formdata.csv">
-    <fieldset>
-      <legend>New Event Submission:</legend>
-      Event Name:<br>
-      <input type="text" name="eventname"<br><br>
-      Date/Time of Event:<br>
-      <input type="text" name="dateofevent"<br><br>
-      Location of Event:<br>
-      <input type="text" name="locationofevent"<br>
-    <p>Type of Event:</p>
-    <form action="/formdata.csv">
-      <select name="eventtype">
-        <option value="health">Health</option>
-        <option value="education">Education</option>
-        <option value="food">Food</option>
-        <option value="culture">Culture</option>
-        <option value="professional">Professional</option>
-        <option value="entertainment">Entertainment</option>
-        <option value="adventureoutdoors">Adventure/Outdoors</option>
-      </select>
-      <br><br>
-      <input type="submit">
-
-    </fieldset>
+      <form action="/formdata.csv">
+      <fieldset>
+        <legend>New Event Submission:</legend>
+        Event Name:<br>
+        <input type="text" name="eventname"<br><br>
+        Date/Time of Event:<br>
+        <input type="text" name="dateofevent"<br><br>
+        Location of Event:<br>
+        <input type="text" name="locationofevent"<br>
+      <p>Type of Event:</p>
+      <form action="/formdata.csv">
+        <select name="eventtype">
+          <option value="health">Health</option>
+          <option value="education">Education</option>
+          <option value="food">Food</option>
+          <option value="culture">Culture</option>
+          <option value="professional">Professional</option>
+          <option value="entertainment">Entertainment</option>
+          <option value="adventureoutdoors">Adventure/Outdoors</option>
+        </select>
+        <br><br>
+      <input type="button" value="Submit" onclick="WriteToFile(this.form)">
   </form>
 
     <!-- Firebase Script -->
