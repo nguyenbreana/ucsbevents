@@ -86,7 +86,7 @@ body {
   }
 
   .featurette-heading {
-    style=color:red;
+
     font-size: 50px;
   }
 }
@@ -109,6 +109,8 @@ body {
   .btn-secondary
 
   {
+    background-color: #004c8d;
+
   text-shadow: 2px 2px 4px #000000;
   .button1 {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
