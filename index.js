@@ -64,3 +64,96 @@ Nugget.prototype.addEvent = function () {
 
 
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+// Create a form for people to add events
+var form = FormApp.create('New Event Form');
+var item = form.addTextItem();
+item.setTitle('What is the name of the event?');
+form.addDateTimeItem()
+  .setTitle('When is the event? (Date and time)');
+form.addCheckboxItem()
+  .setTitle('What type of event is it?')
+  .setChoices([
+    item.createChoice('Health'),
+    item.createChoice('Education'),
+    item.createChoice('Food'),
+    item.createChoice('Culture'),
+    item.createChoice('Professional'),
+    item.createChoice('Entertainment'),
+    item.createChoice('Adventure/Outdoors')
+  ])
+  .showOtherOption(true);
+form.addTextItem()
+  .setTitle('Where is the event?');*/
