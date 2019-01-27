@@ -18,18 +18,16 @@
 
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">Carousel</a>
+        <a class="navbar-brand" href="#">GauchOrgs</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index copy.html">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
+
             <li class="nav-item">
               <a class="nav-link disabled" href="#">Disabled</a>
             </li>
@@ -45,17 +43,19 @@
     <head>
     <body>
       <head>
-      <script language="javascript">
-        function WriteToFile(passForm) {
-          var fso = new ActiveXObject("Scripting.FileSystemObject");
-          var fileLoc = "D:\\formdata.csv";
-          var file = fso.CreateTextFile(fileLoc, true);
-          file.writeline(passForm.eventname.value + ',' +
-                         passForm.dateofevent.value + ',' + passForm.locationofevent.value + ',' + passForm.eventtype.value);
-          file.Close();
-          alert('File created successfully at location: ' + fileLoc);
-         }
-      </script>
+        <script type ="text/javascript">
+ function WriteToFile(passForm) {
+
+    set fso = CreateObject("Scripting.FileSystemObject");
+    set s = fso.CreateTextFile("C:\formdata.csv", True);
+    s.writeline(document.passForm.eventname.value);
+    s.writeline(document.passForm.dateofevent.value);
+    s.writeline(document.passForm.locationofevent.value);
+    s.writeline(document.passForm.eventtype.value);
+    s.Close();
+ }
+  </script>
+
       </head>
       <body background="surfers-sunset.jpeg">
     <head>
@@ -121,7 +121,7 @@
             <option value="adventureoutdoors">Adventure/Outdoors</option>
           </select>
           <br><br>
-        <input type="button" value="Submit" onclick=WriteToFile(this.formdata)>
+        <input type="button" value="Submit" onclick=WriteToFile(formdata.csv)>
       </form>
     </div>
 
