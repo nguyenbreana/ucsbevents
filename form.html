@@ -43,20 +43,6 @@
     </header>
 
     <head>
-    <script language="javascript">
-      function WriteToFile(passForm) {
-        var fso = new ActiveXObject("Scripting.FileSystemObject");
-        var fileLoc = "D:\\formdata.csv";
-        var file = fso.CreateTextFile(fileLoc, true);
-        file.writeline(passForm.eventname.value + ',' +
-                       passForm.dateofevent.value + ',' +
-                       passForm.locationofevent.value + ',' +
-                       passForm.eventtype.value);
-        file.Close();
-        alert('File created successfully at location: ' + fileLoc);
-       }
-    </script>
-    </head>
     <body>
       <head>
       <script language="javascript">
@@ -65,7 +51,7 @@
           var fileLoc = "D:\\formdata.csv";
           var file = fso.CreateTextFile(fileLoc, true);
           file.writeline(passForm.eventname.value + ',' +
-                         passForm.dateofevent.value + ',' + 		passForm.locationofevent.value + ',' + passForm.eventtype.value);
+                         passForm.dateofevent.value + ',' + passForm.locationofevent.value + ',' + passForm.eventtype.value);
           file.Close();
           alert('File created successfully at location: ' + fileLoc);
          }
@@ -135,7 +121,7 @@
             <option value="adventureoutdoors">Adventure/Outdoors</option>
           </select>
           <br><br>
-        <input type="button" value="Submit" onclick="WriteToFile(this.form)">
+        <input type="button" value="Submit" onclick=WriteToFile(this.formdata)>
       </form>
     </div>
 
