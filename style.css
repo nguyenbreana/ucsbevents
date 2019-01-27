@@ -2,6 +2,8 @@
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 
+
+
 body {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -84,6 +86,7 @@ body {
   }
 
   .featurette-heading {
+    style=color:red;
     font-size: 50px;
   }
 }
