@@ -49,7 +49,7 @@ Nugget.prototype.addEvent = function () {
     var newEvent = {
       name: "SB Hacks",
       time: "January",
-      location: "Corwin",
+      location: "Corwin CA",
       type: "Hackathon"
     }
 
