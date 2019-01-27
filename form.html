@@ -18,18 +18,16 @@
 
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">Carousel</a>
+        <a class="navbar-brand" href="#">GauchOrgs</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index copy.html">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
+
             <li class="nav-item">
               <a class="nav-link disabled" href="#">Disabled</a>
             </li>
@@ -42,37 +40,95 @@
       </nav>
     </header>
 
-  <form>
-    <form action="/formdata.csv">
-    <fieldset>
-      <legend>New Event Submission:</legend>
-      Event Name:<br>
-      <input type="text" name="eventname"<br><br>
-      Date/Time of Event:<br>
-      <input type="text" name="dateofevent"<br><br>
-      Location of Event:<br>
-      <input type="text" name="locationofevent"<br>
-    <p>Type of Event:</p>
-    <form action="/formdata.csv">
-      <select name="eventtype">
-        <option value="health">Health</option>
-        <option value="education">Education</option>
-        <option value="food">Food</option>
-        <option value="culture">Culture</option>
-        <option value="professional">Professional</option>
-        <option value="entertainment">Entertainment</option>
-        <option value="adventureoutdoors">Adventure/Outdoors</option>
-      </select>
-      <br><br>
-      <input type="submit">
+    <head>
+    <body>
+      <head>
+        <script type ="text/javascript">
+ function WriteToFile(passForm) {
 
-    </fieldset>
-  </form>
+    set fso = CreateObject("Scripting.FileSystemObject");
+    set s = fso.CreateTextFile("C:\formdata.csv", True);
+    s.writeline(document.passForm.eventname.value);
+    s.writeline(document.passForm.dateofevent.value);
+    s.writeline(document.passForm.locationofevent.value);
+    s.writeline(document.passForm.eventtype.value);
+    s.Close();
+ }
+  </script>
+
+      </head>
+      <body background="surfers-sunset.jpeg">
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    * {box-sizing: border-box;}
+
+    input[type=text], select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    input[type=submit] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background: linear-gradient(to bottom, #ffcc99 0%, #ccccff 100%);
+    }
+
+    .container {
+      border-radius: 5px;
+      background-color: #ffc107;
+      padding: 20px;
+    }
+    </style>
+    </head>
+    <body>
+
+    <h3>Add an Event!</h3>
+
+    <div class="container">
+    <form action="/formdata.csv">
+        <fieldset>
+          <legend>New Event Submission:</legend>
+          Event Name:<br>
+          <input type="text" name="eventname"<br><br>
+          Date/Time of Event:<br>
+          <input type="text" name="dateofevent"<br><br>
+          Location of Event:<br>
+          <input type="text" name="locationofevent"<br>
+        <p>Type of Event:</p>
+        <form action="/formdata.csv">
+          <select name="eventtype">
+            <option value="health">Health</option>
+            <option value="education">Education</option>
+            <option value="food">Food</option>
+            <option value="culture">Culture</option>
+            <option value="professional">Professional</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="adventureoutdoors">Adventure/Outdoors</option>
+          </select>
+          <br><br>
+        <input type="button" value="Submit" onclick=WriteToFile(formdata.csv)>
+      </form>
+    </div>
 
     <!-- Firebase Script -->
     <script src="index.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
-    <script>
+    <script>d
       // Initialize Firebase
       var config = {
         apiKey: "AIzaSyB94wh9kH9jwNsR9DjJS1JPapamynLOzw0",
